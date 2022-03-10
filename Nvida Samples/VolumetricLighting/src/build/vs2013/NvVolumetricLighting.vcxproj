@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup Label="ProjectConfigurations">
+	<ProjectConfiguration Include="debug|x64">
+			<Configuration>debug</Configuration>
+			<Platform>x64</Platform>
+	</ProjectConfiguration>
+	<ProjectConfiguration Include="profile|x64">
+			<Configuration>profile</Configuration>
+			<Platform>x64</Platform>
+	</ProjectConfiguration>
+	<ProjectConfiguration Include="checked|x64">
+			<Configuration>checked</Configuration>
+			<Platform>x64</Platform>
+	</ProjectConfiguration>
+	<ProjectConfiguration Include="release|x64">
+			<Configuration>release</Configuration>
+			<Platform>x64</Platform>
+	</ProjectConfiguration>
+	</ItemGroup>
+	<PropertyGroup Label="Globals">
+		<ApplicationEnvironment>title</ApplicationEnvironment>
+		<!-- - - - -->
+		<PlatformToolset>v110</PlatformToolset>
+		<MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+	</PropertyGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="Configuration">
+		<ConfigurationType>DynamicLibrary</ConfigurationType>
+		<PlatformToolset>v120</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='profile|x64'" Label="Configuration">
+		<ConfigurationType>DynamicLibrary</ConfigurationType>
+		<PlatformToolset>v120</PlatformToolset>
+		<WholeProgramOptimization>true</WholeProgramOptimization>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='checked|x64'" Label="Configuration">
+		<ConfigurationType>DynamicLibrary</ConfigurationType>
+		<PlatformToolset>v120</PlatformToolset>
+		<WholeProgramOptimization>true</WholeProgramOptimization>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="Configuration">
+		<ConfigurationType>DynamicLibrary</ConfigurationType>
+		<PlatformToolset>v120</PlatformToolset>
+		<WholeProgramOptimization>true</WholeProgramOptimization>
+	</PropertyGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+	<ImportGroup Label="ExtensionSettings">
+	</ImportGroup>
+	<ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+	</ImportGroup>
+	<ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='profile|x64'">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+	</ImportGroup>
+	<ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='checked|x64'">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+	</ImportGroup>
+	<ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+	</ImportGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+		<OutDir>./../../../redist/win64\</OutDir>
+		<IntDir>./x64/NvVolumetricLighting/debug\</IntDir>
+		<TargetExt>.dll</TargetExt>
+		<TargetName>NvVolumetricLighting.win64.D</TargetName>
+		<CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+		<CodeAnalysisRules />
+		<CodeAnalysisRuleAssemblies />
+		<SkipCopyingSymbolsToOutputDirectory>true</SkipCopyingSymbolsToOutputDirectory>
+	</PropertyGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+		<ClCompile>
+			<CallingConvention>Cdecl</CallingConvention>
+			<IntrinsicFunctions>true</IntrinsicFunctions>
+			<RuntimeTypeInfo>false</RuntimeTypeInfo>
+			<OpenMPSupport>false</OpenMPSupport>
+			<SuppressStartupBanner>true</SuppressStartupBanner>
+			<FloatingPointModel>Fast</FloatingPointModel>
+			<AdditionalOptions>/W4 /Oy- /EHsc -D_ITERATOR_DEBUG_LEVEL=0 /d2Zi+</AdditionalOptions>
+			<Optimization>Disabled</Optimization>
+			<AdditionalIncludeDirectories>./{user:ShaderOutputPath};./../..;./../../../include;$(IntDir);./../../../external/NvFoundation/1.1/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>_UNICODE;UNICODE;_WINDOWS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_LIB;NV_FOUNDATION_DLL=1;_WIN64;NV_PLATFORM_D3D11=1;NV_DEBUG=1;NV_CHECKED=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<ExceptionHandling>false</ExceptionHandling>
+			<WarningLevel>Level4</WarningLevel>
+			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+			<PrecompiledHeader>NotUsing</PrecompiledHeader>
+			<PrecompiledHeaderFile></PrecompiledHeaderFile>
+			<DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+		</ClCompile>
+		<Link>
+			<AdditionalOptions>/MACHINE:x64 /SUBSYSTEM:WINDOWS /NOLOGO</AdditionalOptions>
+			<AdditionalDependencies>d3d11.lib;comctl32.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<OutputFile>$(OutDir)NvVolumetricLighting.win64.D.dll</OutputFile>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+			<ProgramDatabaseFile>$(OutDir)/NvVolumetricLighting.win64.D.dll.pdb</ProgramDatabaseFile>
+			<SubSystem>Console</SubSystem>
+			<ImportLibrary>./../../../lib/win64/NvVolumetricLighting.win64.D.lib</ImportLibrary>
+			<GenerateDebugInformation>true</GenerateDebugInformation>
+			<TargetMachine>MachineX64</TargetMachine>
+		</Link>
+		<ResourceCompile>
+		</ResourceCompile>
+		<ProjectReference>
+		</ProjectReference>
+		<PostBuildEvent>
+			<Command>XCOPY /Y /F "../../../redist/win64/$(TargetFileName)" "../../../samples/bin/"</Command>
+		</PostBuildEvent>
+	</ItemDefinitionGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='profile|x64'">
+		<OutDir>./../../../redist/win64\</OutDir>
+		<IntDir>./x64/NvVolumetricLighting/profile\</IntDir>
+		<TargetExt>.dll</TargetExt>
+		<TargetName>NvVolumetricLighting.win64.P</TargetName>
+		<CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+		<CodeAnalysisRules />
+		<CodeAnalysisRuleAssemblies />
+		<SkipCopyingSymbolsToOutputDirectory>true</SkipCopyingSymbolsToOutputDirectory>
+	</PropertyGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='profile|x64'">
+		<ClCompile>
+			<IntrinsicFunctions>true</IntrinsicFunctions>
+			<RuntimeTypeInfo>false</RuntimeTypeInfo>
+			<FunctionLevelLinking>true</FunctionLevelLinking>
+			<OpenMPSupport>false</OpenMPSupport>
+			<SuppressStartupBanner>true</SuppressStartupBanner>
+			<FloatingPointModel>Fast</FloatingPointModel>
+			<AdditionalOptions>/W4 /Oy- /EHsc /d2Zi+</AdditionalOptions>
+			<Optimization>Disabled</Optimization>
+			<AdditionalIncludeDirectories>./{user:ShaderOutputPath};./../..;./../../../include;$(IntDir);./../../../external/NvFoundation/1.1/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>_UNICODE;UNICODE;_WINDOWS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_LIB;NV_FOUNDATION_DLL=1;_WIN64;NV_PLATFORM_D3D11=1;NV_PROFILE=1;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<ExceptionHandling>false</ExceptionHandling>
+			<WarningLevel>Level4</WarningLevel>
+			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+			<PrecompiledHeader>NotUsing</PrecompiledHeader>
+			<PrecompiledHeaderFile></PrecompiledHeaderFile>
+			<DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+		</ClCompile>
+		<Link>
+			<AdditionalOptions>/MACHINE:x64 /SUBSYSTEM:WINDOWS /NOLOGO</AdditionalOptions>
+			<AdditionalDependencies>d3d11.lib;comctl32.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<OutputFile>$(OutDir)NvVolumetricLighting.win64.P.dll</OutputFile>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+			<ProgramDatabaseFile>$(OutDir)/NvVolumetricLighting.win64.P.dll.pdb</ProgramDatabaseFile>
+			<SubSystem>Console</SubSystem>
+			<ImportLibrary>./../../../lib/win64/NvVolumetricLighting.win64.P.lib</ImportLibrary>
+			<GenerateDebugInformation>true</GenerateDebugInformation>
+			<TargetMachine>MachineX64</TargetMachine>
+		</Link>
+		<ResourceCompile>
+		</ResourceCompile>
+		<ProjectReference>
+		</ProjectReference>
+		<PostBuildEvent>
+			<Command>XCOPY /Y /F "../../../redist/win64/$(TargetFileName)" "../../../samples/bin/"</Command>
+		</PostBuildEvent>
+	</ItemDefinitionGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='checked|x64'">
+		<OutDir>./../../../redist/win64\</OutDir>
+		<IntDir>./x64/NvVolumetricLighting/checked\</IntDir>
+		<TargetExt>.dll</TargetExt>
+		<TargetName>NvVolumetricLighting.win64.C</TargetName>
+		<CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+		<CodeAnalysisRules />
+		<CodeAnalysisRuleAssemblies />
+		<SkipCopyingSymbolsToOutputDirectory>true</SkipCopyingSymbolsToOutputDirectory>
+	</PropertyGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='checked|x64'">
+		<ClCompile>
+			<IntrinsicFunctions>true</IntrinsicFunctions>
+			<RuntimeTypeInfo>false</RuntimeTypeInfo>
+			<FunctionLevelLinking>true</FunctionLevelLinking>
+			<OpenMPSupport>false</OpenMPSupport>
+			<SuppressStartupBanner>true</SuppressStartupBanner>
+			<FloatingPointModel>Fast</FloatingPointModel>
+			<AdditionalOptions>/W4 /Oy- /EHsc /d2Zi+</AdditionalOptions>
+			<Optimization>Disabled</Optimization>
+			<AdditionalIncludeDirectories>./{user:ShaderOutputPath};./../..;./../../../include;$(IntDir);./../../../external/NvFoundation/1.1/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>_UNICODE;UNICODE;_WINDOWS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_LIB;NV_FOUNDATION_DLL=1;_WIN64;NV_PLATFORM_D3D11=1;NV_CHECKED=1;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<ExceptionHandling>false</ExceptionHandling>
+			<WarningLevel>Level4</WarningLevel>
+			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+			<PrecompiledHeader>NotUsing</PrecompiledHeader>
+			<PrecompiledHeaderFile></PrecompiledHeaderFile>
+			<DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+		</ClCompile>
+		<Link>
+			<AdditionalOptions>/MACHINE:x64 /SUBSYSTEM:WINDOWS /NOLOGO</AdditionalOptions>
+			<AdditionalDependencies>d3d11.lib;comctl32.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<OutputFile>$(OutDir)NvVolumetricLighting.win64.C.dll</OutputFile>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+			<ProgramDatabaseFile>$(OutDir)/NvVolumetricLighting.win64.C.dll.pdb</ProgramDatabaseFile>
+			<SubSystem>Console</SubSystem>
+			<ImportLibrary>./../../../lib/win64/NvVolumetricLighting.win64.C.lib</ImportLibrary>
+			<GenerateDebugInformation>true</GenerateDebugInformation>
+			<TargetMachine>MachineX64</TargetMachine>
+		</Link>
+		<ResourceCompile>
+		</ResourceCompile>
+		<ProjectReference>
+		</ProjectReference>
+		<PostBuildEvent>
+			<Command>XCOPY /Y /F "../../../redist/win64/$(TargetFileName)" "../../../samples/bin/"</Command>
+		</PostBuildEvent>
+	</ItemDefinitionGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+		<OutDir>./../../../redist/win64\</OutDir>
+		<IntDir>./x64/NvVolumetricLighting/release\</IntDir>
+		<TargetExt>.dll</TargetExt>
+		<TargetName>NvVolumetricLighting.win64</TargetName>
+		<CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+		<CodeAnalysisRules />
+		<CodeAnalysisRuleAssemblies />
+		<SkipCopyingSymbolsToOutputDirectory>true</SkipCopyingSymbolsToOutputDirectory>
+	</PropertyGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+		<ClCompile>
+			<IntrinsicFunctions>true</IntrinsicFunctions>
+			<RuntimeTypeInfo>false</RuntimeTypeInfo>
+			<FunctionLevelLinking>true</FunctionLevelLinking>
+			<OpenMPSupport>false</OpenMPSupport>
+			<SuppressStartupBanner>true</SuppressStartupBanner>
+			<FloatingPointModel>Fast</FloatingPointModel>
+			<AdditionalOptions>/W4 /Oy- /EHsc /d2Zi+</AdditionalOptions>
+			<Optimization>Disabled</Optimization>
+			<AdditionalIncludeDirectories>./{user:ShaderOutputPath};./../..;./../../../include;$(IntDir);./../../../external/NvFoundation/1.1/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>_UNICODE;UNICODE;_WINDOWS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_LIB;NV_FOUNDATION_DLL=1;_WIN64;NV_PLATFORM_D3D11=1;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<ExceptionHandling>false</ExceptionHandling>
+			<WarningLevel>Level4</WarningLevel>
+			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+			<PrecompiledHeader>NotUsing</PrecompiledHeader>
+			<PrecompiledHeaderFile></PrecompiledHeaderFile>
+			<DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+		</ClCompile>
+		<Link>
+			<AdditionalOptions>/MACHINE:x64 /SUBSYSTEM:WINDOWS /NOLOGO</AdditionalOptions>
+			<AdditionalDependencies>d3d11.lib;comctl32.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<OutputFile>$(OutDir)NvVolumetricLighting.win64.dll</OutputFile>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+			<ProgramDatabaseFile>$(OutDir)/NvVolumetricLighting.win64.dll.pdb</ProgramDatabaseFile>
+			<SubSystem>Console</SubSystem>
+			<ImportLibrary>./../../../lib/win64/NvVolumetricLighting.win64.lib</ImportLibrary>
+			<GenerateDebugInformation>true</GenerateDebugInformation>
+			<TargetMachine>MachineX64</TargetMachine>
+		</Link>
+		<ResourceCompile>
+		</ResourceCompile>
+		<ProjectReference>
+		</ProjectReference>
+		<PostBuildEvent>
+			<Command>XCOPY /Y /F "../../../redist/win64/$(TargetFileName)" "../../../samples/bin/"</Command>
+		</PostBuildEvent>
+	</ItemDefinitionGroup>
+	<ItemGroup>
+		<ClInclude Include="..\..\..\include\Nv\VolumetricLighting\NvVolumetricLighting.h">
+		</ClInclude>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="..\..\common.h">
+		</ClInclude>
+		<ClInclude Include="..\..\context_common.h">
+		</ClInclude>
+		<ClCompile Include="..\..\context_common.cpp">
+		</ClCompile>
+		<ClCompile Include="..\..\NvVolumetricLighting.cpp">
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<CustomBuild Include="..\..\shaders\Quad_VS.hlsl">
+			<Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tvs_5_0" ..\..\shaders\Quad_VS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)shaders/Quad_VS.mux.h;$(IntDir)shaders/Quad_VS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tvs_5_0" ..\..\shaders\Quad_VS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">$(IntDir)shaders/Quad_VS.mux.h;$(IntDir)shaders/Quad_VS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tvs_5_0" ..\..\shaders\Quad_VS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">$(IntDir)shaders/Quad_VS.mux.h;$(IntDir)shaders/Quad_VS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tvs_5_0" ..\..\shaders\Quad_VS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)shaders/Quad_VS.mux.h;$(IntDir)shaders/Quad_VS.mux.bytecode;</Outputs>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\RenderVolume_VS.hlsl">
+			<Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tvs_5_0" ..\..\shaders\RenderVolume_VS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)shaders/RenderVolume_VS.mux.h;$(IntDir)shaders/RenderVolume_VS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tvs_5_0" ..\..\shaders\RenderVolume_VS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">$(IntDir)shaders/RenderVolume_VS.mux.h;$(IntDir)shaders/RenderVolume_VS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tvs_5_0" ..\..\shaders\RenderVolume_VS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">$(IntDir)shaders/RenderVolume_VS.mux.h;$(IntDir)shaders/RenderVolume_VS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tvs_5_0" ..\..\shaders\RenderVolume_VS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)shaders/RenderVolume_VS.mux.h;$(IntDir)shaders/RenderVolume_VS.mux.bytecode;</Outputs>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\RenderVolume_HS.hlsl">
+			<Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Ths_5_0" ..\..\shaders\RenderVolume_HS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)shaders/RenderVolume_HS.mux.h;$(IntDir)shaders/RenderVolume_HS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Ths_5_0" ..\..\shaders\RenderVolume_HS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">$(IntDir)shaders/RenderVolume_HS.mux.h;$(IntDir)shaders/RenderVolume_HS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Ths_5_0" ..\..\shaders\RenderVolume_HS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">$(IntDir)shaders/RenderVolume_HS.mux.h;$(IntDir)shaders/RenderVolume_HS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Ths_5_0" ..\..\shaders\RenderVolume_HS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)shaders/RenderVolume_HS.mux.h;$(IntDir)shaders/RenderVolume_HS.mux.bytecode;</Outputs>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\RenderVolume_DS.hlsl">
+			<Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tds_5_0" ..\..\shaders\RenderVolume_DS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)shaders/RenderVolume_DS.mux.h;$(IntDir)shaders/RenderVolume_DS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tds_5_0" ..\..\shaders\RenderVolume_DS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">$(IntDir)shaders/RenderVolume_DS.mux.h;$(IntDir)shaders/RenderVolume_DS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tds_5_0" ..\..\shaders\RenderVolume_DS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">$(IntDir)shaders/RenderVolume_DS.mux.h;$(IntDir)shaders/RenderVolume_DS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tds_5_0" ..\..\shaders\RenderVolume_DS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)shaders/RenderVolume_DS.mux.h;$(IntDir)shaders/RenderVolume_DS.mux.bytecode;</Outputs>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\Apply_PS.hlsl">
+			<Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\Apply_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)shaders/Apply_PS.mux.h;$(IntDir)shaders/Apply_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\Apply_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">$(IntDir)shaders/Apply_PS.mux.h;$(IntDir)shaders/Apply_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\Apply_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">$(IntDir)shaders/Apply_PS.mux.h;$(IntDir)shaders/Apply_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\Apply_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)shaders/Apply_PS.mux.h;$(IntDir)shaders/Apply_PS.mux.bytecode;</Outputs>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\ComputePhaseLookup_PS.hlsl">
+			<Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\ComputePhaseLookup_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)shaders/ComputePhaseLookup_PS.mux.h;$(IntDir)shaders/ComputePhaseLookup_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\ComputePhaseLookup_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">$(IntDir)shaders/ComputePhaseLookup_PS.mux.h;$(IntDir)shaders/ComputePhaseLookup_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\ComputePhaseLookup_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">$(IntDir)shaders/ComputePhaseLookup_PS.mux.h;$(IntDir)shaders/ComputePhaseLookup_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\ComputePhaseLookup_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)shaders/ComputePhaseLookup_PS.mux.h;$(IntDir)shaders/ComputePhaseLookup_PS.mux.bytecode;</Outputs>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\Debug_PS.hlsl">
+			<Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\Debug_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)shaders/Debug_PS.mux.h;$(IntDir)shaders/Debug_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\Debug_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">$(IntDir)shaders/Debug_PS.mux.h;$(IntDir)shaders/Debug_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\Debug_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">$(IntDir)shaders/Debug_PS.mux.h;$(IntDir)shaders/Debug_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\Debug_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)shaders/Debug_PS.mux.h;$(IntDir)shaders/Debug_PS.mux.bytecode;</Outputs>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\DownsampleDepth_PS.hlsl">
+			<Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\DownsampleDepth_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)shaders/DownsampleDepth_PS.mux.h;$(IntDir)shaders/DownsampleDepth_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\DownsampleDepth_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">$(IntDir)shaders/DownsampleDepth_PS.mux.h;$(IntDir)shaders/DownsampleDepth_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\DownsampleDepth_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">$(IntDir)shaders/DownsampleDepth_PS.mux.h;$(IntDir)shaders/DownsampleDepth_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\DownsampleDepth_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)shaders/DownsampleDepth_PS.mux.h;$(IntDir)shaders/DownsampleDepth_PS.mux.bytecode;</Outputs>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\RenderVolume_PS.hlsl">
+			<Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\RenderVolume_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)shaders/RenderVolume_PS.mux.h;$(IntDir)shaders/RenderVolume_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\RenderVolume_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">$(IntDir)shaders/RenderVolume_PS.mux.h;$(IntDir)shaders/RenderVolume_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\RenderVolume_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">$(IntDir)shaders/RenderVolume_PS.mux.h;$(IntDir)shaders/RenderVolume_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\RenderVolume_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)shaders/RenderVolume_PS.mux.h;$(IntDir)shaders/RenderVolume_PS.mux.bytecode;</Outputs>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\Resolve_PS.hlsl">
+			<Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\Resolve_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)shaders/Resolve_PS.mux.h;$(IntDir)shaders/Resolve_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\Resolve_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">$(IntDir)shaders/Resolve_PS.mux.h;$(IntDir)shaders/Resolve_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\Resolve_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">$(IntDir)shaders/Resolve_PS.mux.h;$(IntDir)shaders/Resolve_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\Resolve_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)shaders/Resolve_PS.mux.h;$(IntDir)shaders/Resolve_PS.mux.bytecode;</Outputs>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\TemporalFilter_PS.hlsl">
+			<Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\TemporalFilter_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)shaders/TemporalFilter_PS.mux.h;$(IntDir)shaders/TemporalFilter_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\TemporalFilter_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">$(IntDir)shaders/TemporalFilter_PS.mux.h;$(IntDir)shaders/TemporalFilter_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\TemporalFilter_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">$(IntDir)shaders/TemporalFilter_PS.mux.h;$(IntDir)shaders/TemporalFilter_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\shaders\TemporalFilter_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)shaders/TemporalFilter_PS.mux.h;$(IntDir)shaders/TemporalFilter_PS.mux.bytecode;</Outputs>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\ComputeLightLUT_CS.hlsl">
+			<Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tcs_5_0" ..\..\shaders\ComputeLightLUT_CS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)shaders/ComputeLightLUT_CS.mux.h;$(IntDir)shaders/ComputeLightLUT_CS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tcs_5_0" ..\..\shaders\ComputeLightLUT_CS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">$(IntDir)shaders/ComputeLightLUT_CS.mux.h;$(IntDir)shaders/ComputeLightLUT_CS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tcs_5_0" ..\..\shaders\ComputeLightLUT_CS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">$(IntDir)shaders/ComputeLightLUT_CS.mux.h;$(IntDir)shaders/ComputeLightLUT_CS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">"../../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tcs_5_0" ..\..\shaders\ComputeLightLUT_CS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)shaders/ComputeLightLUT_CS.mux.h;$(IntDir)shaders/ComputeLightLUT_CS.mux.bytecode;</Outputs>
+		</CustomBuild>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="..\..\d3d11\compiled_shaders_d3d11.h">
+		</ClInclude>
+		<ClInclude Include="..\..\d3d11\context_d3d11.h">
+		</ClInclude>
+		<ClInclude Include="..\..\d3d11\d3d11_util.h">
+		</ClInclude>
+		<ClCompile Include="..\..\d3d11\compiled_shaders_d3d11.cpp">
+		</ClCompile>
+		<ClCompile Include="..\..\d3d11\context_d3d11.cpp">
+		</ClCompile>
+		<ClCompile Include="..\..\d3d11\d3d11_util.cpp">
+		</ClCompile>
+	</ItemGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+	<ImportGroup Label="ExtensionTargets"></ImportGroup>
+</Project>

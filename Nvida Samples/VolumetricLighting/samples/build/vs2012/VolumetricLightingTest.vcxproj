@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup Label="ProjectConfigurations">
+	<ProjectConfiguration Include="debug|x64">
+			<Configuration>debug</Configuration>
+			<Platform>x64</Platform>
+	</ProjectConfiguration>
+	<ProjectConfiguration Include="profile|x64">
+			<Configuration>profile</Configuration>
+			<Platform>x64</Platform>
+	</ProjectConfiguration>
+	<ProjectConfiguration Include="checked|x64">
+			<Configuration>checked</Configuration>
+			<Platform>x64</Platform>
+	</ProjectConfiguration>
+	<ProjectConfiguration Include="release|x64">
+			<Configuration>release</Configuration>
+			<Platform>x64</Platform>
+	</ProjectConfiguration>
+	</ItemGroup>
+	<PropertyGroup Label="Globals">
+		<ApplicationEnvironment>title</ApplicationEnvironment>
+		<!-- - - - -->
+		<PlatformToolset>v110</PlatformToolset>
+		<MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+	</PropertyGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='profile|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<PlatformToolset>v110</PlatformToolset>
+		<WholeProgramOptimization>true</WholeProgramOptimization>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='checked|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<PlatformToolset>v110</PlatformToolset>
+		<WholeProgramOptimization>true</WholeProgramOptimization>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<PlatformToolset>v110</PlatformToolset>
+		<WholeProgramOptimization>true</WholeProgramOptimization>
+	</PropertyGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+	<ImportGroup Label="ExtensionSettings">
+	</ImportGroup>
+	<ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+	</ImportGroup>
+	<ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='profile|x64'">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+	</ImportGroup>
+	<ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='checked|x64'">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+	</ImportGroup>
+	<ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+	</ImportGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+		<OutDir>./../../bin\</OutDir>
+		<IntDir>./x64/VolumetricLightingTest/debug\</IntDir>
+		<TargetExt>.exe</TargetExt>
+		<TargetName>VolumetricLightingTest.win64.D</TargetName>
+		<CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+		<CodeAnalysisRules />
+		<CodeAnalysisRuleAssemblies />
+	</PropertyGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+		<ClCompile>
+			<CallingConvention>Cdecl</CallingConvention>
+			<IntrinsicFunctions>true</IntrinsicFunctions>
+			<RuntimeTypeInfo>false</RuntimeTypeInfo>
+			<OpenMPSupport>false</OpenMPSupport>
+			<SuppressStartupBanner>true</SuppressStartupBanner>
+			<FloatingPointModel>Fast</FloatingPointModel>
+			<AdditionalOptions>/wd4995 /W4 /Oy- /EHsc -D_ITERATOR_DEBUG_LEVEL=0 /d2Zi+</AdditionalOptions>
+			<Optimization>Disabled</Optimization>
+			<AdditionalIncludeDirectories>./../../VolumetricLightingTest;./../../../include;$(IntDir);./../../../external/NvFoundation/1.1/include;./{user:ShaderOutputPath};%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>_WIN64;_UNICODE;UNICODE;_WINDOWS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;NV_FOUNDATION_DLL=0;NV_PLATFORM_D3D11=1;NV_DEBUG=1;NV_CHECKED=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<ExceptionHandling>false</ExceptionHandling>
+			<WarningLevel>Level4</WarningLevel>
+			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+			<PrecompiledHeader>NotUsing</PrecompiledHeader>
+			<PrecompiledHeaderFile></PrecompiledHeaderFile>
+			<DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+		</ClCompile>
+		<Link>
+			<AdditionalOptions>/MACHINE:x64 /SUBSYSTEM:WINDOWS /NOLOGO</AdditionalOptions>
+			<AdditionalDependencies>comctl32.lib;dxguid.lib;d3d11.lib;NvVolumetricLighting.win64.D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<OutputFile>$(OutDir)VolumetricLightingTest.win64.D.exe</OutputFile>
+			<AdditionalLibraryDirectories>./../../../lib/win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+			<ProgramDatabaseFile>$(OutDir)/VolumetricLightingTest.win64.D.exe.pdb</ProgramDatabaseFile>
+			<SubSystem>Windows</SubSystem>
+			<ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+			<GenerateDebugInformation>true</GenerateDebugInformation>
+			<TargetMachine>MachineX64</TargetMachine>
+		</Link>
+		<ResourceCompile>
+		</ResourceCompile>
+		<ProjectReference>
+		</ProjectReference>
+	</ItemDefinitionGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='profile|x64'">
+		<OutDir>./../../bin\</OutDir>
+		<IntDir>./x64/VolumetricLightingTest/profile\</IntDir>
+		<TargetExt>.exe</TargetExt>
+		<TargetName>VolumetricLightingTest.win64.P</TargetName>
+		<CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+		<CodeAnalysisRules />
+		<CodeAnalysisRuleAssemblies />
+	</PropertyGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='profile|x64'">
+		<ClCompile>
+			<IntrinsicFunctions>true</IntrinsicFunctions>
+			<RuntimeTypeInfo>false</RuntimeTypeInfo>
+			<FunctionLevelLinking>true</FunctionLevelLinking>
+			<OpenMPSupport>false</OpenMPSupport>
+			<SuppressStartupBanner>true</SuppressStartupBanner>
+			<FloatingPointModel>Fast</FloatingPointModel>
+			<AdditionalOptions>/wd4995 /W4 /Oy- /EHsc /d2Zi+</AdditionalOptions>
+			<Optimization>Disabled</Optimization>
+			<AdditionalIncludeDirectories>./../../VolumetricLightingTest;./../../../include;$(IntDir);./../../../external/NvFoundation/1.1/include;./{user:ShaderOutputPath};%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>_WIN64;_UNICODE;UNICODE;_WINDOWS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;NV_FOUNDATION_DLL=0;NV_PLATFORM_D3D11=1;NV_PROFILE=1;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<ExceptionHandling>false</ExceptionHandling>
+			<WarningLevel>Level4</WarningLevel>
+			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+			<PrecompiledHeader>NotUsing</PrecompiledHeader>
+			<PrecompiledHeaderFile></PrecompiledHeaderFile>
+			<DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+		</ClCompile>
+		<Link>
+			<AdditionalOptions>/MACHINE:x64 /SUBSYSTEM:WINDOWS /NOLOGO</AdditionalOptions>
+			<AdditionalDependencies>comctl32.lib;dxguid.lib;d3d11.lib;NvVolumetricLighting.win64.P.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<OutputFile>$(OutDir)VolumetricLightingTest.win64.P.exe</OutputFile>
+			<AdditionalLibraryDirectories>./../../../lib/win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+			<ProgramDatabaseFile>$(OutDir)/VolumetricLightingTest.win64.P.exe.pdb</ProgramDatabaseFile>
+			<SubSystem>Windows</SubSystem>
+			<ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+			<GenerateDebugInformation>true</GenerateDebugInformation>
+			<TargetMachine>MachineX64</TargetMachine>
+		</Link>
+		<ResourceCompile>
+		</ResourceCompile>
+		<ProjectReference>
+		</ProjectReference>
+	</ItemDefinitionGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='checked|x64'">
+		<OutDir>./../../bin\</OutDir>
+		<IntDir>./x64/VolumetricLightingTest/checked\</IntDir>
+		<TargetExt>.exe</TargetExt>
+		<TargetName>VolumetricLightingTest.win64.C</TargetName>
+		<CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+		<CodeAnalysisRules />
+		<CodeAnalysisRuleAssemblies />
+	</PropertyGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='checked|x64'">
+		<ClCompile>
+			<IntrinsicFunctions>true</IntrinsicFunctions>
+			<RuntimeTypeInfo>false</RuntimeTypeInfo>
+			<FunctionLevelLinking>true</FunctionLevelLinking>
+			<OpenMPSupport>false</OpenMPSupport>
+			<SuppressStartupBanner>true</SuppressStartupBanner>
+			<FloatingPointModel>Fast</FloatingPointModel>
+			<AdditionalOptions>/wd4995 /W4 /Oy- /EHsc /d2Zi+</AdditionalOptions>
+			<Optimization>Disabled</Optimization>
+			<AdditionalIncludeDirectories>./../../VolumetricLightingTest;./../../../include;$(IntDir);./../../../external/NvFoundation/1.1/include;./{user:ShaderOutputPath};%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>_WIN64;_UNICODE;UNICODE;_WINDOWS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;NV_FOUNDATION_DLL=0;NV_PLATFORM_D3D11=1;NV_CHECKED=1;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<ExceptionHandling>false</ExceptionHandling>
+			<WarningLevel>Level4</WarningLevel>
+			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+			<PrecompiledHeader>NotUsing</PrecompiledHeader>
+			<PrecompiledHeaderFile></PrecompiledHeaderFile>
+			<DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+		</ClCompile>
+		<Link>
+			<AdditionalOptions>/MACHINE:x64 /SUBSYSTEM:WINDOWS /NOLOGO</AdditionalOptions>
+			<AdditionalDependencies>comctl32.lib;dxguid.lib;d3d11.lib;NvVolumetricLighting.win64.C.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<OutputFile>$(OutDir)VolumetricLightingTest.win64.C.exe</OutputFile>
+			<AdditionalLibraryDirectories>./../../../lib/win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+			<ProgramDatabaseFile>$(OutDir)/VolumetricLightingTest.win64.C.exe.pdb</ProgramDatabaseFile>
+			<SubSystem>Windows</SubSystem>
+			<ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+			<GenerateDebugInformation>true</GenerateDebugInformation>
+			<TargetMachine>MachineX64</TargetMachine>
+		</Link>
+		<ResourceCompile>
+		</ResourceCompile>
+		<ProjectReference>
+		</ProjectReference>
+	</ItemDefinitionGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+		<OutDir>./../../bin\</OutDir>
+		<IntDir>./x64/VolumetricLightingTest/release\</IntDir>
+		<TargetExt>.exe</TargetExt>
+		<TargetName>VolumetricLightingTest.win64</TargetName>
+		<CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+		<CodeAnalysisRules />
+		<CodeAnalysisRuleAssemblies />
+	</PropertyGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+		<ClCompile>
+			<IntrinsicFunctions>true</IntrinsicFunctions>
+			<RuntimeTypeInfo>false</RuntimeTypeInfo>
+			<FunctionLevelLinking>true</FunctionLevelLinking>
+			<OpenMPSupport>false</OpenMPSupport>
+			<SuppressStartupBanner>true</SuppressStartupBanner>
+			<FloatingPointModel>Fast</FloatingPointModel>
+			<AdditionalOptions>/wd4995 /W4 /Oy- /EHsc /d2Zi+</AdditionalOptions>
+			<Optimization>Disabled</Optimization>
+			<AdditionalIncludeDirectories>./../../VolumetricLightingTest;./../../../include;$(IntDir);./../../../external/NvFoundation/1.1/include;./{user:ShaderOutputPath};%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>_WIN64;_UNICODE;UNICODE;_WINDOWS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;NV_FOUNDATION_DLL=0;NV_PLATFORM_D3D11=1;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<ExceptionHandling>false</ExceptionHandling>
+			<WarningLevel>Level4</WarningLevel>
+			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+			<PrecompiledHeader>NotUsing</PrecompiledHeader>
+			<PrecompiledHeaderFile></PrecompiledHeaderFile>
+			<DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+		</ClCompile>
+		<Link>
+			<AdditionalOptions>/MACHINE:x64 /SUBSYSTEM:WINDOWS /NOLOGO</AdditionalOptions>
+			<AdditionalDependencies>comctl32.lib;dxguid.lib;d3d11.lib;NvVolumetricLighting.win64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<OutputFile>$(OutDir)VolumetricLightingTest.win64.exe</OutputFile>
+			<AdditionalLibraryDirectories>./../../../lib/win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+			<ProgramDatabaseFile>$(OutDir)/VolumetricLightingTest.win64.exe.pdb</ProgramDatabaseFile>
+			<SubSystem>Windows</SubSystem>
+			<ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+			<GenerateDebugInformation>true</GenerateDebugInformation>
+			<TargetMachine>MachineX64</TargetMachine>
+		</Link>
+		<ResourceCompile>
+		</ResourceCompile>
+		<ProjectReference>
+		</ProjectReference>
+	</ItemDefinitionGroup>
+	<ItemGroup>
+		<ClInclude Include="..\..\VolumetricLightingTest\common.h">
+		</ClInclude>
+		<ClInclude Include="..\..\VolumetricLightingTest\scene.h">
+		</ClInclude>
+		<ClCompile Include="..\..\VolumetricLightingTest\main.cpp">
+		</ClCompile>
+		<ClCompile Include="..\..\VolumetricLightingTest\scene.cpp">
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="..\..\VolumetricLightingTest\d3d11\compiled_shaders_d3d11.h">
+		</ClInclude>
+		<ClInclude Include="..\..\VolumetricLightingTest\d3d11\d3d11_util.h">
+		</ClInclude>
+		<ClInclude Include="..\..\VolumetricLightingTest\d3d11\DeviceManager.h">
+		</ClInclude>
+		<ClCompile Include="..\..\VolumetricLightingTest\d3d11\compiled_shaders_d3d11.cpp">
+		</ClCompile>
+		<ClCompile Include="..\..\VolumetricLightingTest\d3d11\d3d11_main.cpp">
+		</ClCompile>
+		<ClCompile Include="..\..\VolumetricLightingTest\d3d11\d3d11_util.cpp">
+		</ClCompile>
+		<ClCompile Include="..\..\VolumetricLightingTest\d3d11\DeviceManager.cpp">
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<CustomBuild Include="..\..\VolumetricLightingTest\shaders\quad_VS.hlsl">
+			<Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tvs_5_0" ..\..\VolumetricLightingTest\shaders\quad_VS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)shaders/quad_VS.mux.h;$(IntDir)shaders/quad_VS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tvs_5_0" ..\..\VolumetricLightingTest\shaders\quad_VS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">$(IntDir)shaders/quad_VS.mux.h;$(IntDir)shaders/quad_VS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tvs_5_0" ..\..\VolumetricLightingTest\shaders\quad_VS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">$(IntDir)shaders/quad_VS.mux.h;$(IntDir)shaders/quad_VS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tvs_5_0" ..\..\VolumetricLightingTest\shaders\quad_VS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)shaders/quad_VS.mux.h;$(IntDir)shaders/quad_VS.mux.bytecode;</Outputs>
+		</CustomBuild>
+		<CustomBuild Include="..\..\VolumetricLightingTest\shaders\scene_VS.hlsl">
+			<Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tvs_5_0" ..\..\VolumetricLightingTest\shaders\scene_VS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)shaders/scene_VS.mux.h;$(IntDir)shaders/scene_VS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tvs_5_0" ..\..\VolumetricLightingTest\shaders\scene_VS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">$(IntDir)shaders/scene_VS.mux.h;$(IntDir)shaders/scene_VS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tvs_5_0" ..\..\VolumetricLightingTest\shaders\scene_VS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">$(IntDir)shaders/scene_VS.mux.h;$(IntDir)shaders/scene_VS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tvs_5_0" ..\..\VolumetricLightingTest\shaders\scene_VS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)shaders/scene_VS.mux.h;$(IntDir)shaders/scene_VS.mux.bytecode;</Outputs>
+		</CustomBuild>
+		<CustomBuild Include="..\..\VolumetricLightingTest\shaders\scene_GS.hlsl">
+			<Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tgs_5_0" ..\..\VolumetricLightingTest\shaders\scene_GS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)shaders/scene_GS.mux.h;$(IntDir)shaders/scene_GS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tgs_5_0" ..\..\VolumetricLightingTest\shaders\scene_GS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">$(IntDir)shaders/scene_GS.mux.h;$(IntDir)shaders/scene_GS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tgs_5_0" ..\..\VolumetricLightingTest\shaders\scene_GS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">$(IntDir)shaders/scene_GS.mux.h;$(IntDir)shaders/scene_GS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tgs_5_0" ..\..\VolumetricLightingTest\shaders\scene_GS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)shaders/scene_GS.mux.h;$(IntDir)shaders/scene_GS.mux.bytecode;</Outputs>
+		</CustomBuild>
+		<CustomBuild Include="..\..\VolumetricLightingTest\shaders\post_PS.hlsl">
+			<Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\VolumetricLightingTest\shaders\post_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)shaders/post_PS.mux.h;$(IntDir)shaders/post_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\VolumetricLightingTest\shaders\post_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">$(IntDir)shaders/post_PS.mux.h;$(IntDir)shaders/post_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\VolumetricLightingTest\shaders\post_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">$(IntDir)shaders/post_PS.mux.h;$(IntDir)shaders/post_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\VolumetricLightingTest\shaders\post_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)shaders/post_PS.mux.h;$(IntDir)shaders/post_PS.mux.bytecode;</Outputs>
+		</CustomBuild>
+		<CustomBuild Include="..\..\VolumetricLightingTest\shaders\scene_PS.hlsl">
+			<Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\VolumetricLightingTest\shaders\scene_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)shaders/scene_PS.mux.h;$(IntDir)shaders/scene_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\VolumetricLightingTest\shaders\scene_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">$(IntDir)shaders/scene_PS.mux.h;$(IntDir)shaders/scene_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\VolumetricLightingTest\shaders\scene_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">$(IntDir)shaders/scene_PS.mux.h;$(IntDir)shaders/scene_PS.mux.bytecode;</Outputs>
+			<Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">"../../VolumetricLightingTest/../../tools/shadermux.exe" -l 0 -w -f -o "$(IntDir)shaders" -p d3d11 -c "/Tps_5_0" ..\..\VolumetricLightingTest\shaders\scene_PS.hlsl</Command>
+			<Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Precompiling shader permutations for %(Identity)</Message>
+			<Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)shaders/scene_PS.mux.h;$(IntDir)shaders/scene_PS.mux.bytecode;</Outputs>
+		</CustomBuild>
+	</ItemGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+	<ImportGroup Label="ExtensionTargets"></ImportGroup>
+</Project>

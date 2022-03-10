@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<Filter Include="src"><!--  -->
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="..\..\VolumetricLightingTest\common.h">
+			<Filter>src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\VolumetricLightingTest\scene.h">
+			<Filter>src</Filter>
+		</ClInclude>
+		<ClCompile Include="..\..\VolumetricLightingTest\main.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\VolumetricLightingTest\scene.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<Filter Include="src (platform)"><!--  -->
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="..\..\VolumetricLightingTest\d3d11\compiled_shaders_d3d11.h">
+			<Filter>src (platform)</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\VolumetricLightingTest\d3d11\d3d11_util.h">
+			<Filter>src (platform)</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\VolumetricLightingTest\d3d11\DeviceManager.h">
+			<Filter>src (platform)</Filter>
+		</ClInclude>
+		<ClCompile Include="..\..\VolumetricLightingTest\d3d11\compiled_shaders_d3d11.cpp">
+			<Filter>src (platform)</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\VolumetricLightingTest\d3d11\d3d11_main.cpp">
+			<Filter>src (platform)</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\VolumetricLightingTest\d3d11\d3d11_util.cpp">
+			<Filter>src (platform)</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\VolumetricLightingTest\d3d11\DeviceManager.cpp">
+			<Filter>src (platform)</Filter>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<Filter Include="src (shaders)"><!-- Shadermux -->
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<CustomBuild Include="..\..\VolumetricLightingTest\shaders\quad_VS.hlsl">
+			<Filter>src (shaders)</Filter>
+		</CustomBuild>
+		<CustomBuild Include="..\..\VolumetricLightingTest\shaders\scene_VS.hlsl">
+			<Filter>src (shaders)</Filter>
+		</CustomBuild>
+		<CustomBuild Include="..\..\VolumetricLightingTest\shaders\scene_GS.hlsl">
+			<Filter>src (shaders)</Filter>
+		</CustomBuild>
+		<CustomBuild Include="..\..\VolumetricLightingTest\shaders\post_PS.hlsl">
+			<Filter>src (shaders)</Filter>
+		</CustomBuild>
+		<CustomBuild Include="..\..\VolumetricLightingTest\shaders\scene_PS.hlsl">
+			<Filter>src (shaders)</Filter>
+		</CustomBuild>
+	</ItemGroup>
+</Project>

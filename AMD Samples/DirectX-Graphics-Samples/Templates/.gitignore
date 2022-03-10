@@ -1,0 +1,12 @@
+# ignore non-code directories and files
+.vs/
+AppPackages/
+ARM/
+Debug/
+Release/
+x64/
+*.ipch
+*.sdf
+*.opendb
+*.opensdf
+*.user

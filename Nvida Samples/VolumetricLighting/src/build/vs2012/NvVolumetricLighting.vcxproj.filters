@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<Filter Include="public"><!--  -->
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="..\..\..\include\Nv\VolumetricLighting\NvVolumetricLighting.h">
+			<Filter>public</Filter>
+		</ClInclude>
+	</ItemGroup>
+	<ItemGroup>
+		<Filter Include="common"><!--  -->
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="..\..\common.h">
+			<Filter>common</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\context_common.h">
+			<Filter>common</Filter>
+		</ClInclude>
+		<ClCompile Include="..\..\context_common.cpp">
+			<Filter>common</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\NvVolumetricLighting.cpp">
+			<Filter>common</Filter>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<Filter Include="shaders"><!-- Shadermux -->
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<CustomBuild Include="..\..\shaders\Quad_VS.hlsl">
+			<Filter>shaders</Filter>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\RenderVolume_VS.hlsl">
+			<Filter>shaders</Filter>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\RenderVolume_HS.hlsl">
+			<Filter>shaders</Filter>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\RenderVolume_DS.hlsl">
+			<Filter>shaders</Filter>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\Apply_PS.hlsl">
+			<Filter>shaders</Filter>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\ComputePhaseLookup_PS.hlsl">
+			<Filter>shaders</Filter>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\Debug_PS.hlsl">
+			<Filter>shaders</Filter>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\DownsampleDepth_PS.hlsl">
+			<Filter>shaders</Filter>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\RenderVolume_PS.hlsl">
+			<Filter>shaders</Filter>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\Resolve_PS.hlsl">
+			<Filter>shaders</Filter>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\TemporalFilter_PS.hlsl">
+			<Filter>shaders</Filter>
+		</CustomBuild>
+		<CustomBuild Include="..\..\shaders\ComputeLightLUT_CS.hlsl">
+			<Filter>shaders</Filter>
+		</CustomBuild>
+	</ItemGroup>
+	<ItemGroup>
+		<Filter Include="d3d11"><!--  -->
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="..\..\d3d11\compiled_shaders_d3d11.h">
+			<Filter>d3d11</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\d3d11\context_d3d11.h">
+			<Filter>d3d11</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\d3d11\d3d11_util.h">
+			<Filter>d3d11</Filter>
+		</ClInclude>
+		<ClCompile Include="..\..\d3d11\compiled_shaders_d3d11.cpp">
+			<Filter>d3d11</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\d3d11\context_d3d11.cpp">
+			<Filter>d3d11</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\d3d11\d3d11_util.cpp">
+			<Filter>d3d11</Filter>
+		</ClCompile>
+	</ItemGroup>
+</Project>

@@ -1,0 +1,6 @@
+[submodule "libs/cauldron"]
+	path = libs/cauldron
+	url = ../Cauldron.git
+[submodule "media/Cauldron-Media"]
+	path = media/Cauldron-Media
+	url = ../Cauldron-Media.git
